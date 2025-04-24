@@ -3,30 +3,32 @@
 import 'package:flutter/material.dart';
 import 'package:mobileappdevintern_test/screens/mainScreen.dart';
 
-class LandingScreen extends StatelessWidget {
+class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
 
-  void navigatetoMainscreen(BuildContext context)
+  @override
+  State<LandingScreen> createState() => _LandingScreenState();
+}
+
+class _LandingScreenState extends State<LandingScreen> {
+
+  @override
+  void initState()
   {
-    Navigator.pushReplacement(
-      context,
-      PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) => MainScreen(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          var begin = 0.0;
-          var end = 1.0;
-          var curve = Curves.easeInOut;
+    super.initState();
 
-          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-          var fadeAnimation = animation.drive(tween);
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) => MainScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        ),
+      );
+    });
 
-          return FadeTransition(
-            opacity: fadeAnimation,
-            child: child,
-          );
-        },
-      ),
-    );
   }
 
   @override
@@ -34,35 +36,30 @@ class LandingScreen extends StatelessWidget {
 
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-    
+
     return Scaffold(
       backgroundColor: Colors.white,
-      body: GestureDetector(
-        onTap: () {
-          navigatetoMainscreen(context);
-        },
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Image.asset(
-                'assets/images/landingscreen.jpg',
-                width: screenWidth,
+      body: Stack(
+        children: [
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Image.asset(
+              'assets/images/landingscreen.jpg',
+              width: screenWidth,
+            ),
+          ),
+          Center(
+            child: Text(
+              'alphaventure',
+              style: TextStyle(
+                fontFamily: 'NCS Radhiumz',
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(1, 59, 83, 1.0),
               ),
             ),
-            Center(
-              child: Text(
-                'alphaventure',
-                style: TextStyle(
-                  fontFamily: 'NCS Radhiumz',
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(1, 59, 83, 1.0),
-                ),
-              ),
-            )
-          ],
-        )
+          )
+        ],
       ),
     );
   }

@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:mobileappdevintern_test/screens/formScreen.dart';
 import 'package:mobileappdevintern_test/utils/StatisticsCard.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,7 +18,17 @@ class _MainScreenState extends State<MainScreen> {
   int _currentPage = 1;
   final int _totalRows = 30;
 
-  void navigatetoFormscreen(BuildContext context) {}
+  void navigatetoFormscreen(BuildContext context) {
+    Navigator.pushReplacement(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) => FormScreen(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +37,29 @@ class _MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButton: Container(
+        height: 40,
+        width: 180,
+        child: FloatingActionButton.extended(
+            onPressed: () {
+              navigatetoFormscreen(context);
+            },
+            icon: Icon(Icons.add,color: Colors.white,),
+            label: Text(
+              ' New Visit ',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                color: Colors.white,
+                fontSize: 18
+              ),
+            ),
+            backgroundColor: Colors.blue,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       body: Padding(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: ListView(
@@ -122,7 +156,7 @@ class _MainScreenState extends State<MainScreen> {
                 Container(
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(5, 71, 120, 1),
+                    color: Colors.blue,
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
@@ -150,10 +184,10 @@ class _MainScreenState extends State<MainScreen> {
                 columnSpacing: 16,
                 horizontalMargin: 12,
                 columns: [
-                  DataColumn(label: Text('Date', style: TextStyle(fontWeight: FontWeight.bold))),
-                  DataColumn(label: Text('Market', style: TextStyle(fontWeight: FontWeight.bold))),
-                  DataColumn(label: Text('Store Name', style: TextStyle(fontWeight: FontWeight.bold))),
-                  DataColumn(label: Center(child: Text('Perfect Score', style: TextStyle(fontWeight: FontWeight.bold)))),
+                  DataColumn(label: Text('Date', style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(1, 59, 83, 1.0) ))),
+                  DataColumn(label: Text('Market', style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(1, 59, 83, 1.0)))),
+                  DataColumn(label: Text('Store Name', style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(1, 59, 83, 1.0)))),
+                  DataColumn(label: Center(child: Text('Perfect Score', style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(1, 59, 83, 1.0))))),
                 ],
                 rows: [
                   _buildDataRow('18-03-24', 'BAH', 'Lorem Ipsum', 77),
