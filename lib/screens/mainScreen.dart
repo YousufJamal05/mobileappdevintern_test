@@ -2,7 +2,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:mobileappdevintern_test/screens/formScreen.dart';
 import 'package:mobileappdevintern_test/utils/StatisticsCard.dart';
 
@@ -19,12 +18,22 @@ class _MainScreenState extends State<MainScreen> {
   final int _totalRows = 30;
 
   void navigatetoFormscreen(BuildContext context) {
-    Navigator.pushReplacement(
+    Navigator.push(
       context,
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) => FormScreen(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          return FadeTransition(opacity: animation, child: child);
+          var begin = 0.0;
+          var end = 1.0;
+          var curve = Curves.easeInOut;
+
+          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+          var fadeAnimation = animation.drive(tween);
+
+          return FadeTransition(
+            opacity: fadeAnimation,
+            child: child,
+          );
         },
       ),
     );

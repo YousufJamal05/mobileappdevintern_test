@@ -31,8 +31,8 @@ class Statisticscard extends StatelessWidget {
                 center: Text(
                   '60',
                   style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 28,
+                    fontFamily: 'Serenity-Medium',
+                    fontSize: 34,
                     color: Colors.black,
                   ),
                 ),
@@ -44,8 +44,9 @@ class Statisticscard extends StatelessWidget {
                 child: Text(
                   'Average Perfect Store Score',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 18,
                     color: Colors.black,
+                    fontFamily: 'Serenity-Medium'
                   ),
                 ),
               )
@@ -70,7 +71,7 @@ class Statisticscard extends StatelessWidget {
                     Text(
                       '60%',
                       style: TextStyle(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Serenity-Medium',
                         color: Color.fromRGBO(1, 59, 83, 1.0),
                         fontSize: 16,
                       ),
@@ -84,6 +85,7 @@ class Statisticscard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 12,
                               color: Colors.black,
+                              fontFamily: 'Serenity-Medium'
                             ),
                           ),
                           Text(
@@ -91,7 +93,8 @@ class Statisticscard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 12,
                               color: Colors.black,
-                              fontWeight: FontWeight.w400
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Serenity-Medium'
                             ),
                           ),
                         ],
@@ -113,7 +116,7 @@ class Statisticscard extends StatelessWidget {
                     Text(
                       '58%',
                       style: TextStyle(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Serenity-Medium',
                         color: Color.fromRGBO(1, 59, 83, 1.0),
                         fontSize: 16,
                       ),
@@ -127,6 +130,7 @@ class Statisticscard extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.black,
+                                fontFamily: 'Serenity-Medium'
                               ),
                             ),
                             Text(
@@ -134,7 +138,8 @@ class Statisticscard extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.black,
-                                  fontWeight: FontWeight.w400
+                                  fontWeight: FontWeight.w400,
+                                fontFamily: 'Serenity-Medium'
                               ),
                             ),
                           ],
@@ -156,7 +161,7 @@ class Statisticscard extends StatelessWidget {
                     Text(
                       '62%',
                       style: TextStyle(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Serenity-Medium',
                         color: Color.fromRGBO(1, 59, 83, 1.0),
                         fontSize: 16,
                       ),
@@ -170,6 +175,7 @@ class Statisticscard extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.black,
+                                fontFamily: 'Serenity-Medium'
                               ),
                             ),
                             Text(
@@ -177,7 +183,8 @@ class Statisticscard extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.black,
-                                  fontWeight: FontWeight.w400
+                                  fontWeight: FontWeight.w400,
+                                fontFamily: 'Serenity-Medium'
                               ),
                             ),
                           ],
@@ -199,7 +206,7 @@ class Statisticscard extends StatelessWidget {
                     Text(
                       '63%',
                       style: TextStyle(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Serenity-Medium',
                         color: Color.fromRGBO(1, 59, 83, 1.0),
                         fontSize: 16,
                       ),
@@ -213,6 +220,7 @@ class Statisticscard extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.black,
+                                fontFamily: 'Serenity-Medium'
                               ),
                             ),
                             Text(
@@ -220,7 +228,8 @@ class Statisticscard extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.black,
-                                  fontWeight: FontWeight.w400
+                                  fontWeight: FontWeight.w400,
+                                fontFamily: 'Serenity-Medium'
                               ),
                             ),
                           ],

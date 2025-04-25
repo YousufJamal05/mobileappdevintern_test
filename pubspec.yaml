@@ -87,6 +87,9 @@ flutter:
          - asset: fonts/NCS Radhiumz.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+     - family: Serenity-Medium
+       fonts:
+         - asset: fonts/Serenity-Medium.ttf
      - family: Noyh-Medium
        fonts:
          - asset: fonts/Noyh-Medium.ttf

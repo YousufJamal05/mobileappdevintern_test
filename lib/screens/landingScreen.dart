@@ -17,13 +17,23 @@ class _LandingScreenState extends State<LandingScreen> {
   {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) => MainScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return FadeTransition(opacity: animation, child: child);
+            var begin = 0.0;
+            var end = 1.0;
+            var curve = Curves.easeInOut;
+
+            var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+            var fadeAnimation = animation.drive(tween);
+
+            return FadeTransition(
+              opacity: fadeAnimation,
+              child: child,
+            );
           },
         ),
       );
