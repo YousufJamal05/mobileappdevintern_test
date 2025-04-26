@@ -17,7 +17,7 @@ class _LandingScreenState extends State<LandingScreen> {
   {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
@@ -38,7 +38,6 @@ class _LandingScreenState extends State<LandingScreen> {
         ),
       );
     });
-
   }
 
   @override
